@@ -13,7 +13,7 @@ var vemail = $("#email").val();
 
 //NEW TEST STUFF
 
-let sesh = {
+let data = {
   name: vname,
   email: vemail,
   company: company,
