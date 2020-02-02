@@ -38,6 +38,7 @@ xhr.responseType = "json";
 
 xhr.addEventListener("readystatechage", function() {
   if (this.readyState === 4) {
+    renderRawResponse(xhr.response);
     console.log(this.responseText);
   }
 });
