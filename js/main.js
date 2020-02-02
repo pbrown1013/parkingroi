@@ -26,32 +26,32 @@ let sesh = {
   eventCount: count,
   eventHours: hours
 };
+
+var xhr = new XMLHttpRequest();
+var url = "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc";
+
+var lot = JSON.parse(xhr.responseText);
+var data = JSON.stringify(lot);
+
+xhr.responseType = "json";
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4) {
+    console.log(data);
+
+    // if (xhr.status === 200) {
+    //   document.getElementById("ajax").innerHTML = xhr.responseText;
+    // } else if (xhr.status === 404) {
+    //   console.log("cant find that shit");
+    // } else if (xhr.status === 500) {
+    //   console.log("shits bunk");
+    // }
+  }
+};
+xhr.open("POST", url);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
 function sendAJAX() {
-  var xhr = new XMLHttpRequest();
-  var url =
-    "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc";
-
-  var lot = JSON.parse(xhr.responseText);
-  var data = JSON.stringify(sesh);
-
-  xhr.responseType = "json";
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      console.log(data);
-
-      // if (xhr.status === 200) {
-      //   document.getElementById("ajax").innerHTML = xhr.responseText;
-      // } else if (xhr.status === 404) {
-      //   console.log("cant find that shit");
-      // } else if (xhr.status === 500) {
-      //   console.log("shits bunk");
-      // }
-    }
-  };
-  xhr.open("POST", url);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-  xhr.send();
+  xhr.send(data);
 }
 // let Headers = {
 //   "Content-Type": "application/x-www-form-urlencoded"
