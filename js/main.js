@@ -28,25 +28,32 @@ let sesh = {
 };
 
 var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
 var url = "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc";
 
 //var lot = JSON.parse(xhr.responseText);
 var data = JSON.stringify(sesh);
 
 xhr.responseType = "json";
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4) {
-    console.log(data);
 
-    // if (xhr.status === 200) {
-    //   document.getElementById("ajax").innerHTML = xhr.responseText;
-    // } else if (xhr.status === 404) {
-    //   console.log("cant find that shit");
-    // } else if (xhr.status === 500) {
-    //   console.log("shits bunk");
-    // }
+xhr.addEventListener("readystatechage", function() {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
   }
-};
+});
+// xhr.onreadystatechange = function() {
+//   if (xhr.readyState === 4) {
+//     console.log(data);
+
+// if (xhr.status === 200) {
+//   document.getElementById("ajax").innerHTML = xhr.responseText;
+// } else if (xhr.status === 404) {
+//   console.log("cant find that shit");
+// } else if (xhr.status === 500) {
+//   console.log("shits bunk");
+// }
+
 xhr.open("POST", url);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
