@@ -32,8 +32,6 @@ var xhr = new XMLHttpRequest();
 
 var url = "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc";
 
-var lot = JSON.parse(xhr.responseText);
-
 xhr.responseType = "json";
 
 xhr.addEventListener("readystatechage", function() {
