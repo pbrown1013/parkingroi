@@ -36,8 +36,7 @@ var data = JSON.stringify(sesh);
 xhr.responseType = "json";
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    console.log(data);
-
+    //console.log(data);
     // if (xhr.status === 200) {
     //   document.getElementById("ajax").innerHTML = xhr.responseText;
     // } else if (xhr.status === 404) {
