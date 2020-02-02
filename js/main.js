@@ -28,7 +28,6 @@ let sesh = {
 };
 
 var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
 
 var url = "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc";
 
