@@ -32,7 +32,7 @@ var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
     var lot = JSON.parse(xhr.responseText);
-    console.log(typeof data);
+    console.log(data);
 
     // if (xhr.status === 200) {
     //   document.getElementById("ajax").innerHTML = xhr.responseText;
