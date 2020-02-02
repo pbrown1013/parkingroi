@@ -31,7 +31,7 @@ var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    var lot = JSON.parse(xhr.responseText);
+    var data = JSON.parse(xhr.responseText);
     console.log(data);
 
     // if (xhr.status === 200) {
@@ -43,13 +43,13 @@ xhr.onreadystatechange = function() {
     // }
   }
 };
-
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.open(
   "POST",
   "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc",
   true
 );
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
 function sendAJAX() {
   xhr.send(data);
 }
