@@ -28,11 +28,14 @@ let sesh = {
 };
 
 var xhr = new XMLHttpRequest();
+var url = "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc";
 
+var lot = JSON.parse(xhr.responseText);
+var data = JSON.stringify(sesh);
+
+xhr.responseType = "json";
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    var lot = JSON.parse(xhr.responseText);
-    var data = JSON.stringify(sesh);
     console.log(data);
 
     // if (xhr.status === 200) {
@@ -44,11 +47,7 @@ xhr.onreadystatechange = function() {
     // }
   }
 };
-xhr.open(
-  "POST",
-  "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc",
-  true
-);
+xhr.open("POST", url);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 function sendAJAX() {
