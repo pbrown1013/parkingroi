@@ -31,12 +31,18 @@ var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    document.getElementById("ajax").innerHTML = xhr.responseText;
+    if (xhr.status === 200) {
+      document.getElementById("ajax").innerHTML = xhr.responseText;
+    } else if (xhr.status === 404) {
+      console.log("cant find that shit");
+    } else if (xhr.status === 500) {
+      console.log("shits bunk");
+    }
   }
 };
 xhr.open(
   "POST",
-  "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc"
+  "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc123"
 );
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
