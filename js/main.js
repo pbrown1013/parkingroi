@@ -51,7 +51,7 @@ function sendAJAX() {
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  xhr.send(data);
+  xhr.send();
 }
 // let Headers = {
 //   "Content-Type": "application/x-www-form-urlencoded"
