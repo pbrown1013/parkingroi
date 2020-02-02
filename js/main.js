@@ -43,13 +43,13 @@ xhr.onreadystatechange = function() {
     // }
   }
 };
+
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.open(
   "POST",
   "https://parkhub-bosh-poc.bubbleapps.io/version-test/api/1.1/wf/calc",
   true
 );
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
 function sendAJAX() {
   xhr.send(data);
 }
