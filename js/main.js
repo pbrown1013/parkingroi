@@ -31,7 +31,7 @@ var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    console.log(xhr.responseText);
+    console.log("its lit");
 
     // if (xhr.status === 200) {
     //   document.getElementById("ajax").innerHTML = xhr.responseText;
