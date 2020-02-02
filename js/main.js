@@ -31,7 +31,7 @@ var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    var lot = JSON.parse(xhr.responseText);
+    var sesh = JSON.parse(xhr.responseText);
     var data = JSON.stringify(sesh);
     console.log(data);
 
