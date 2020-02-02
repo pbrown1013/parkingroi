@@ -13,7 +13,7 @@ var vemail = $("#email").val();
 
 //NEW TEST STUFF
 
-let data = {
+let sesh = {
   name: vname,
   email: vemail,
   company: company,
@@ -33,7 +33,7 @@ xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
     var lot = JSON.parse(xhr.responseText);
     var data = JSON.stringify(sesh);
-    console.log(lot);
+    console.log(data);
 
     // if (xhr.status === 200) {
     //   document.getElementById("ajax").innerHTML = xhr.responseText;
