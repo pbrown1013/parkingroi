@@ -11,8 +11,6 @@ var vname = $("#full_name").val();
 var company = $("#company").val();
 var vemail = $("#email").val();
 
-//NEW TEST STUFF
-
 let sesh = {
   name: vname,
   email: vemail,
